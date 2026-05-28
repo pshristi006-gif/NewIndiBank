@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>New Indi Bank</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+    <div class="logo">
+        New Indi Bank
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/login">Login</a>
+
+        <a href="/signup">Signup</a>
+
+    </div>
+
+</div>
+
+<!-- Hero Section -->
+
+<div class="hero">
+
+    <!-- Left Side -->
+
+    <div class="hero-left">
+
+        <h1>
+            Welcome to <span>New Indi Bank</span>
+        </h1>
+
+        <p>
+            India's modern digital banking platform.
+            Secure, fast and smart banking solutions
+            for your financial future.
+        </p>
+
+        <div class="features">
+
+            <div class="feature-card">
+                Secure Banking
+            </div>
+
+            <div class="feature-card">
+                Instant Transactions
+            </div>
+
+            <div class="feature-card">
+                24/7 Customer Support
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="hero-right">
+
+        <div class="login-box">
+
+            <h2>Bank Login</h2>
+
+            <form action="/dashboard">
+
+                <input type="text"
+                       placeholder="Enter Username"
+                       required>
+
+                <input type="password"
+                       placeholder="Enter Password"
+                       required>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="signup-text">
+                New User?
+                <a href="/signup">Create Account</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

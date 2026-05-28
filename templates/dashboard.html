@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+    <div class="logo">
+        MyBank
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Create Account</a>
+    </div>
+
+</div>
+
+<!-- Dashboard -->
+
+<div class="dashboard">
+
+    <h1 class="dashboard-title">
+        Banking Dashboard
+    </h1>
+
+    <!-- Stats -->
+
+    <div class="stats">
+
+        <div class="card">
+            <h3>Total Customers</h3>
+            <p>{{ accounts|length }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Accounts</h3>
+            <p>{{ accounts|length }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Bank Status</h3>
+            <p>Active</p>
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Balance</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for acc in accounts %}
+
+            <tr>
+
+                <td>{{ acc[0] }}</td>
+
+                <td>{{ acc[1] }}</td>
+
+                <td>₹ {{ acc[2] }}</td>
+
+                <td>
+
+                    <a class="action-btn deposit"
+                       href="/deposit/{{ acc[0] }}">
+                        Deposit
+                    </a>
+
+                    <a class="action-btn withdraw"
+                       href="/withdraw/{{ acc[0] }}">
+                        Withdraw
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
