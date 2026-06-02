@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import sqlite3
 
+
 app = Flask(__name__)
 
 # Create Database
@@ -22,6 +23,7 @@ conn.close()
 @app.route('/')
 def home():
     return render_template('landing.html')
+
 @app.route('/login')
 def login():
     return render_template('login.html')
